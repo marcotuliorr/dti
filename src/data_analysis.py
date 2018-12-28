@@ -13,6 +13,15 @@ def audience_analysis(entries):
     plt.savefig("img/age_histogram.png")
     plt.close()
 
+    # Draw histogram of professors' experiences
+    years_experience = [e.professor.yearsexp for e in entries if e.professor.yearsexp]
+    plt.hist(years_experience, bins=range(0, 45, 5), facecolor='lightblue')
+    plt.ylabel("Frequency")
+    plt.xlabel("Years of experience")
+    plt.title("Histogram of years of experience")
+    plt.savefig("img/experience_histogram.png")
+    plt.close()
+
 
     # By gender
     gender_counter = collections.Counter([e.professor.gender for e in entries])
@@ -42,7 +51,6 @@ def audience_analysis(entries):
     plt.xlabel('Quantity')
     plt.title('By level')
     plt.savefig('img/level.png')
-    plt.show()
     plt.close()
 
 
@@ -58,7 +66,6 @@ def audience_analysis(entries):
     plt.xlabel('Quantity')
     plt.title('By registration on Wikipedia')
     plt.savefig('img/wikipedia.png')
-    plt.show()
     plt.close()
 
 
@@ -74,7 +81,6 @@ def audience_analysis(entries):
     plt.xlabel('Quantity')
     plt.title('By University')
     plt.savefig('img/university.png')
-    plt.show()
     plt.close()
 
 
