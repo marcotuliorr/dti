@@ -136,18 +136,3 @@ class WikiSurveyEntry:
 
         for key, value in kwargs.iteritems():
             setattr(self, key, value)
-        # self.update
-        # self.professor = professor
-        # self.perceived_usefulness = kwargs('perceived_usefulness')
-        # self.perceived_ease_of_use = kwargs('perceived_ease_of_use')
-        # self.perceived_enjoyment = kwargs('perceived_enjoyment')
-        # self.quality = quawlity
-        # self.visibility = kwargs('visibility')
-        # self.social_image = kwargs('social_image')
-        # self.sharing_attitude = kwargs('sharing_attitude')
-        # self.user_behaviour = kwargs('user_behaviour')
-        # self.profile2 = kwargs('profile2')
-        # self.job_relevance = kwargs('job_relevance')
-        # self.behavioral_intention = kwargs('behavioral_intention')
-        # self.incentives = kwargs('incentives')
-        # self.experience = kwargs('experience')
