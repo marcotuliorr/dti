@@ -1,5 +1,6 @@
 import csv
 from wiki_survey_entry import *
+import data_analysis
 
 def readDataFromFile():
     with open('data/wiki4HE.csv', 'rb') as csvfile:
@@ -33,6 +34,8 @@ def readDataFromFile():
 
 def main():
     entries = readDataFromFile()
+
+    data_analysis.audience_analysis(entries)
     
 
 if __name__ == '__main__':
