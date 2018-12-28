@@ -32,13 +32,13 @@ def readDataFromFile():
             wiki_entries.append(wiki_entry)
         return wiki_entries
 
+
 def main():
     entries = readDataFromFile()
-
     data_analysis.audience_analysis(entries)
     data_analysis.enjoyment_analysis(entries)
     data_analysis.other_analysis(entries)
-    
+
 
 if __name__ == '__main__':
     main()

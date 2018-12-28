@@ -110,13 +110,11 @@ def enjoyment_analysis(entries):
     # - is neutral regarding a statement if they answer 3.
     # - agrees with a statement if they answer 4 or 5.
 
-    meanAge = np.mean([e.professor.age for e in entries if e.professor.age])
     meanAgeAgreeEnj1 = np.mean([e.professor.age for e in entries if e.enjoyment.enj1 >= 4])
     meanAgeDisagreeEnj1 = np.mean([e.professor.age for e in entries if e.enjoyment.enj1 <= 2])
     medianAgeAgreeEnj1 = np.median([e.professor.age for e in entries if e.enjoyment.enj1 >= 4])
     medianAgeDisagreeEnj1 = np.median([e.professor.age for e in entries if e.enjoyment.enj1 <= 2])
 
-    print 'Mean age among all professors: ' + str(meanAge)
     print 'Mean age among professors that agree (ENJ1): ' + str(meanAgeAgreeEnj1)
     print 'Mean age among professors that disagree (ENJ1): ' + str(meanAgeDisagreeEnj1)
     print 'Median age among professors that agree (ENJ1): ' + str(medianAgeAgreeEnj1)
@@ -133,19 +131,13 @@ def enjoyment_analysis(entries):
     print 'Median age among professors that agree (ENJ2): ' + str(medianAgeAgreeEnj2)
     print 'Median age among professors that disagree (ENJ2): ' + str(medianAgeDisagreeEnj2)
 
-    
-    meanENJ1 = np.mean([e.enjoyment.enj1 for e in entries if e.enjoyment.enj1])
     meanENJ1RegisteredProfessors = np.mean([e.enjoyment.enj1 for e in entries if e.enjoyment.enj1 and e.professor.userwiki == 1])
     meanENJ1NonRegisteredProfessors = np.mean([e.enjoyment.enj1 for e in entries if e.enjoyment.enj1 and e.professor.userwiki == 0])
-    print '-------'
-    print 'Mean rate among all professors (ENJ1): ' + str(meanENJ1)
     print 'Mean rate among registered professors on Wikipedia (ENJ1): ' + str(meanENJ1RegisteredProfessors)
     print 'Mean rate among non-registered professors on Wikipedia (ENJ1): ' + str(meanENJ1NonRegisteredProfessors)
 
-    meanENJ2 = np.mean([e.enjoyment.enj2 for e in entries if e.enjoyment.enj2])
     meanENJ2RegisteredProfessors = np.mean([e.enjoyment.enj2 for e in entries if e.enjoyment.enj2 and e.professor.userwiki == 1])
     meanENJ2NonRegisteredProfessors = np.mean([e.enjoyment.enj2 for e in entries if e.enjoyment.enj2 and e.professor.userwiki == 0])
-    print 'Mean rate among all professors (ENJ2): ' + str(meanENJ2)
     print 'Mean rate among registered professors on Wikipedia (ENJ2): ' + str(meanENJ2RegisteredProfessors)
     print 'Mean rate among non-registered professors on Wikipedia (ENJ2): ' + str(meanENJ2NonRegisteredProfessors)
 
@@ -159,7 +151,6 @@ def enjoyment_analysis(entries):
     meanHealthScienceEnj1 = meanPerDomainEnj1[3]
     meanEngineeringEnj1 = meanPerDomainEnj1[4]
     meanLawEnj1 = meanPerDomainEnj1[5]
-    print '-------'
     print 'Mean by domain (ENJ1):'
     print 'Mean Arts (ENJ1): ' + str(meanArtsEnj1)
     print 'Mean Sciences (ENJ1): ' + str(meanSciencesEnj1)
@@ -190,7 +181,6 @@ def other_analysis(entries):
     meanHealthScienceQu4 = meanPerDomainQU4[3]
     meanEngineeringQu4 = meanPerDomainQU4[4]
     meanLawQu4 = meanPerDomainQU4[5]
-    print '-------'
     print 'Mean by domain (QU4):'
     print 'Mean Arts (QU4): ' + str(meanArtsQu4)
     print 'Mean Sciences (QU4): ' + str(meanSciencesQu4)
